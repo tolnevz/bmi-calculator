@@ -1,0 +1,132 @@
+// Colors
+$primary: #007fc8;
+$secondary: #6c8693;
+
+$blue: #007fc8;
+$green: #00c8a4;
+$red: #ff4367;
+$gray: #7c8891;
+
+@mixin bmi-card {
+  border: 1px solid lighten($gray, 35%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1em;
+  padding: 1em 1.8em;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-control-plaintext {
+  outline: none;
+}
+
+.no-message {
+  color: $blue;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.control {
+  @include bmi-card;
+
+  .control-indicator {
+    font-weight: 600;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .control-title {
+      font-size: 0.75em;
+      font-weight: 400;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .form-control-plaintext {
+      text-align: right;
+      color: $blue;
+      font-weight: 600;
+
+      &.is-invalid {
+        color: $red;
+      }
+
+      &::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+  .invalid-control {
+    font-weight: 400;
+    font-size: 0.875em;
+    color: $red;
+  }
+}
+
+.bmi-result {
+  @include bmi-card;
+
+  .pet-name {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .bmi-score {
+    text-align: center;
+    font-size: 3.5em;
+    font-weight: 600;
+    color: $blue;
+  }
+  .bmi-scale {
+    display: flex;
+    height: 26px;
+    border-radius: 50px;
+    overflow: hidden;
+
+    .scale-area {
+      width: 100%;
+      background-color: $gray;
+      transition: all 0.3s;
+
+      &:nth-child(2) {
+        margin: 0px 2px;
+      }
+
+      &.underweight {
+        background-color: $red;
+      }
+      &.normal {
+        background-color: $green;
+      }
+      &.overweight {
+        background-color: $red;
+      }
+    }
+  }
+
+  .bmi-description {
+    display: flex;
+
+    .description-name {
+      width: 100%;
+      color: $blue;
+      text-align: center;
+      font-size: 1em;
+      margin-top: 10px;
+      transition: all 0.3s;
+
+      &.active {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@import 'bootstrap/scss/bootstrap';

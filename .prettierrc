@@ -1,0 +1,18 @@
+{
+  "bracketSpacing": true,
+  "printWidth": 150,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ["**/*.scss", "**/*.html", "**/*.vue"],
+      "options": {
+        "bracketSpacing": false,
+        "singleQuote": true
+      }
+    }
+  ]
+}
